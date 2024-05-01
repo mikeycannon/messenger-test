@@ -1,0 +1,7 @@
+.stepper-item.pending {
+	display: none !important;
+}
+
+.stepper-item.completed {
+	display: none !important;
+}
