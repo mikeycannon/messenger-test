@@ -119,27 +119,40 @@ var KTCreateAccount = (function () {
 					s.push(
 						FormValidation.formValidation(i, {
 							fields: {
-								account_team_size: {
+								business_name: {
 									validators: {
 										notEmpty: {
-											message: "Time size is required",
+											message: "Busines name is required",
 										},
 									},
 								},
-								account_name: {
+								business_email: {
 									validators: {
 										notEmpty: {
-											message: "Account name is required",
+											message:
+												"Busines email is required",
+										},
+										emailAddress: {
+											message:
+												"The value is not a valid email address",
 										},
 									},
 								},
-								account_plan: {
+								business_number: {
 									validators: {
 										notEmpty: {
-											message: "Account plan is required",
+											message: "Number is required",
 										},
 									},
 								},
+								business_type: {
+									validators: {
+										notEmpty: {
+											message: "Business type is required",
+										},
+									},
+								},
+
 							},
 							plugins: {
 								trigger: new FormValidation.plugins.Trigger(),
@@ -155,27 +168,6 @@ var KTCreateAccount = (function () {
 					s.push(
 						FormValidation.formValidation(i, {
 							fields: {
-								first_name: {
-									validators: {
-										notEmpty: {
-											message: "First name is required",
-										},
-									},
-								},
-								last_name: {
-									validators: {
-										notEmpty: {
-											message: "Last name is required",
-										},
-									},
-								},
-								business_name: {
-									validators: {
-										notEmpty: {
-											message: "Busines name is required",
-										},
-									},
-								},
 								business_descriptor: {
 									validators: {
 										notEmpty: {
@@ -188,18 +180,6 @@ var KTCreateAccount = (function () {
 									validators: {
 										notEmpty: {
 											message: "Busines type is required",
-										},
-									},
-								},
-								business_email: {
-									validators: {
-										notEmpty: {
-											message:
-												"Busines email is required",
-										},
-										emailAddress: {
-											message:
-												"The value is not a valid email address",
 										},
 									},
 								},
