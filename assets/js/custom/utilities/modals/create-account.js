@@ -97,6 +97,13 @@ var KTCreateAccount = (function () {
 										},
 									},
 								},
+								role: {
+									validators: {
+										notEmpty: {
+											message: "Your role is required",
+										},
+									},
+								},
 							},
 							plugins: {
 								trigger: new FormValidation.plugins.Trigger(),
