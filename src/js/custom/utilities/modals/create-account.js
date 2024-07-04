@@ -136,12 +136,6 @@ var KTCreateAccount = function () {
             // Revalidate the field when an option is chosen
             validations[3].revalidateField('card_expiry_year');
         });
-
-		// Expiry year. For more info, plase visit the official plugin site: https://select2.org/
-        $(form.querySelector('[name="business_type"]')).on('change', function() {
-            // Revalidate the field when an option is chosen
-            validations[2].revalidateField('business_type');
-        });
 	}
 
 	var initValidation = function () {
@@ -151,65 +145,49 @@ var KTCreateAccount = function () {
 			form,
 			{
 				fields: {
-					account_type: {
+					'first_name': {
 						validators: {
 							notEmpty: {
-								message: 'Account type is required'
+								message: 'First name is required'
+							}
+						}
+					},
+					'last_name': {
+						validators: {
+							notEmpty: {
+								message: 'Last name is required'
+							}
+						}
+					},
+					'personal_email': {
+						validators: {
+							notEmpty: {
+								message: 'Your email is required'
+							},
+							emailAddress: {
+								message: 'This is not a valid email address'
 							}
 						}
 					}
+					'personal_cell_phone': {
+						validators: {
+							notEmpty: {
+								message: 'Number is required'
+							}
+						}
+					},
+					'role': {
+						validators: {
+							notEmpty: {
+								message: 'Your Role is required'
+							}
+						}
+					},
 				},
-				plugins: {
-					trigger: new FormValidation.plugins.Trigger(),
-					bootstrap: new FormValidation.plugins.Bootstrap5({
-						rowSelector: '.fv-row',
-                        eleInvalidClass: '',
-                        eleValidClass: ''
-					})
-				}
 			}
 		));
 
 		// Step 2
-		validations.push(FormValidation.formValidation(
-			form,
-			{
-				fields: {
-					'account_team_size': {
-						validators: {
-							notEmpty: {
-								message: 'Time size is required'
-							}
-						}
-					},
-					'account_name': {
-						validators: {
-							notEmpty: {
-								message: 'Account name is required'
-							}
-						}
-					},
-					'account_plan': {
-						validators: {
-							notEmpty: {
-								message: 'Account plan is required'
-							}
-						}
-					}
-				},
-				plugins: {
-					trigger: new FormValidation.plugins.Trigger(),
-					// Bootstrap Framework Integration
-					bootstrap: new FormValidation.plugins.Bootstrap5({
-						rowSelector: '.fv-row',
-                        eleInvalidClass: '',
-                        eleValidClass: ''
-					})
-				}
-			}
-		));
-
-		// Step 3
 		validations.push(FormValidation.formValidation(
 			form,
 			{
@@ -228,13 +206,6 @@ var KTCreateAccount = function () {
 							}
 						}
 					},
-					'business_type': {
-						validators: {
-							notEmpty: {
-								message: 'Busines type is required'
-							}
-						}
-					},
 					'business_email': {
 						validators: {
 							notEmpty: {
@@ -245,7 +216,31 @@ var KTCreateAccount = function () {
 							}
 						}
 					}
+					'business_type': {
+						validators: {
+							notEmpty: {
+								message: 'Busines type is required'
+							}
+						}
+					},
 				},
+				plugins: {
+					trigger: new FormValidation.plugins.Trigger(),
+					// Bootstrap Framework Integration
+					bootstrap: new FormValidation.plugins.Bootstrap5({
+						rowSelector: '.fv-row',
+                        eleInvalidClass: '',
+                        eleValidClass: ''
+					})
+				}
+			}
+		));
+
+		// Step 3
+		validations.push(FormValidation.formValidation(
+			form,
+			{
+				
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),
 					// Bootstrap Framework Integration
