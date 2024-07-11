@@ -22,13 +22,31 @@
       width: 50px;
       margin-bottom: 1rem;
     }
+    .form-control {
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    .form-control:focus {
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="form-container">
       <div class="form-header">
-        <img src="your-logo.png" alt="Logo">
+        <img src="assets/media/logos/logo-default.svg" alt="Logo">
         <h4>👋 Hello there!</h4>
         <p>Please confirm your contact details</p>
       </div>
